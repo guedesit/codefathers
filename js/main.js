@@ -1,3 +1,31 @@
+var accessToken;
+function getAccessToken() {
+    // Make the AJAX call to authenticate
+    $.ajax({
+        url: 'https://resilient-goat-k6vpzc-dev-ed.trailblaze.my.salesforce.com/services/oauth2/token',
+        type: 'POST',
+        data: {
+            grant_type: 'password',
+            username: 'pferreira.dev0@resilient-goat-k6vpzc.com',
+            client_id: '3MVG9Xl3BC6VHB.ZaKH46RTNmxK93sP5Xte_odJnY1yQEiLy33EU1rCTsZ0fdcq2Basv5xOi9SIZaZd0s0UPF',
+            client_secret: '67F12676968568A23F038B1A3F07791E909F947FBDE2E7C1330A1974A5A085F4',
+            password: 'NaoEstouChingandoOCaoDaMinhaSogra1HwPDWcnF3qB8XPyZmy7umpzMB'
+        },
+        success: function(response) {
+            // Handle the success response
+            console.log(response);
+            // Store the access token for future use
+            accessToken = response.access_token;
+            // Use the access token to make further API calls
+            // ...
+        },
+        error: function(xhr, status, error) {
+            // Handle the error response
+            console.log(error);
+        }
+    });
+}
+
 (function ($) {
     "use strict";
 
@@ -59,6 +87,10 @@
     form.submit(function(event) {
         // Prevent the default form submission
         event.preventDefault();
+
+        getAccessToken();
+
+        console.log('token' + getAccessToken);
 
         // Get the value from the 'priceQuestion' input
         var priceQuestion = $('#priceQuestion').val();
