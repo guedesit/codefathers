@@ -52,5 +52,32 @@
     });
 
     
+    // Get the form element
+    var form = $('#findCrime');
+
+    // Attach a submit event handler to the form
+    form.submit(function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Get the value from the 'priceQuestion' input
+        var priceQuestion = $('#priceQuestion').val();
+
+        // Make the AJAX call
+        $.ajax({
+        url: 'your-api-endpoint',
+        type: 'GET',
+        data: { priceQuestion: priceQuestion },
+        success: function(response) {
+            // Handle the success response
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            // Handle the error response
+            console.log(error);
+        }
+        });
+    });
+    
 })(jQuery);
 
