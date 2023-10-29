@@ -31,19 +31,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <script>
-        $(document).ready(function() {
-            // Get the query string parameters
-            var queryString = window.location.search;
-            
-            // Check if the query string contains 'success=true'
-            if (queryString.includes('success=true')) {
-              // Show the Bootstrap alert
-              $('#success-alert').attr('hidden', false);
-              $('#web-to-case').attr('hidden', true);
-            }
-          });
-    </script>
 </head>
 
 <body>
@@ -248,6 +235,20 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Get the query string parameters
+            var queryString = window.location.search;
+            
+            // Check if the query string contains 'success=true'
+            if (queryString.includes('success=true')) {
+              // Show the Bootstrap alert
+              $('#success-alert').attr('hidden', false);
+              $('#web-to-case').attr('hidden', true);
+            }
+          });
+    </script>
 </body>
 
 </html>
