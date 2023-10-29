@@ -39,8 +39,8 @@
             // Check if the query string contains 'success=true'
             if (queryString.includes('success=true')) {
               // Show the Bootstrap alert
-              $('#success-alert').show();
-              $('#web-to-case').remove();
+              $('#success-alert').attr('hidden', false);
+              $('#web-to-case').attr('hidden', true);
             }
           });
     </script>
@@ -112,10 +112,11 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    
-                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
-                        <strong>Success!</strong> Your case has been created. We will contact you soon.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div hidden class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="bg-secondary p-5">
+                            <h1 class="text-uppercase mb-4">Tanks for Your Comment!</h1>
+                            <p>Just wait. We will contact you </p>
+                        </div>
                     </div>
 
                     <div class="bg-secondary p-5" id="web-to-case">
