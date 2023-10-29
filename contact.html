@@ -30,6 +30,14 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script>
+    var currentUrl = window.location.href;
+
+    if (currentUrl.includes("success=true") && document.referrer !== "") {
+        alert("Your request was saved");
+    }
+    </script>
 </head>
 
 <body>
@@ -102,35 +110,35 @@
                         <h1 class="text-uppercase mb-4">Have Any Query? Please Contact Our Family!</h1>
                         <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHp000002688k" method="POST">
                             <input type=hidden name="orgid" value="00DHp000002688k">
-                            <input type=hidden name="retURL" value="http://">
+                            <input type=hidden name="retURL" value="https://guedesit.github.io/codefathers/contact.html?success=true">
                             <div class="row g-3">
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-transparent" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-transparent" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="phone" placeholder="Your Phone">
+                                        <input type="text" class="form-control bg-transparent" id="phone" name="phone" placeholder="Your Phone">
                                         <label for="Phone">Your Phone</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control bg-transparent" id="subject" name="subject" placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Leave a message here" id="description" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-transparent" placeholder="Leave a message here" id="description" name="description" style="height: 100px"></textarea>
                                         <label for="description">Leave a message here</label>
                                     </div>
                                 </div>
