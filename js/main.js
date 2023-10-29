@@ -6,10 +6,10 @@ function getAccessToken() {
         type: 'POST',
         data: {
             grant_type: 'password',
-            username: 'pferreira.dev0@resilient-goat-k6vpzc.com',
-            client_id: '3MVG9Xl3BC6VHB.ZaKH46RTNmxK93sP5Xte_odJnY1yQEiLy33EU1rCTsZ0fdcq2Basv5xOi9SIZaZd0s0UPF',
-            client_secret: '67F12676968568A23F038B1A3F07791E909F947FBDE2E7C1330A1974A5A085F4',
-            password: 'NaoEstouChingandoOCaoDaMinhaSogra1HwPDWcnF3qB8XPyZmy7umpzMB'
+            username: '{{secrets.USERNAME}}',
+            client_id: '{{secrets.CLIENT_ID}}',
+            client_secret: '{{secrets.CLIENT_SECRET}}',
+            password: '{{secrets.PASSWORD}}'
         },
         success: function(response) {
             // Handle the success response
