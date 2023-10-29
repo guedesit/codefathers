@@ -6,10 +6,10 @@ function getAccessToken() {
         type: 'POST',
         data: {
             grant_type: 'password',
-            username: '{{secrets.USERNAME}}',
-            client_id: '{{secrets.CLIENT_ID}}',
-            client_secret: '{{secrets.CLIENT_SECRET}}',
-            password: '{{secrets.PASSWORD}}'
+            username: '${{secrets.USERNAME}}',
+            client_id: '${{secrets.CLIENT_ID}}',
+            client_secret: '${{secrets.CLIENT_SECRET}}',
+            password: '${{secrets.PASSWORD}}'
         },
         success: function(response) {
             // Handle the success response
