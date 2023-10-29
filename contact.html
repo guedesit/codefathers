@@ -40,9 +40,7 @@
             if (queryString.includes('success=true')) {
               // Show the Bootstrap alert
               $('#success-alert').show();
-              
-              // Hide the div with id "web-to-case"
-              $('#web-to-case').hide();
+              $('#web-to-case').remove();
             }
           });
     </script>
@@ -99,13 +97,10 @@
     </div>
     <!-- Page Header End -->
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
-        <strong>Success!</strong> Your case has been created. We will contact you soon.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5" id="web-to-case">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -117,7 +112,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-secondary p-5">
+                    
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+                        <strong>Success!</strong> Your case has been created. We will contact you soon.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div class="bg-secondary p-5" id="web-to-case">
                         <p class="d-inline-block bg-dark text-primary py-1 px-4">Contact Us</p>
                         <h1 class="text-uppercase mb-4">Have Any Query? Please Contact Our Family!</h1>
                         <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHp000002688k" method="POST">
